@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BulkCrop: Smart Batch Image Processor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Open-source, browser-based tool to bulk crop, compress, and convert images (JPEG, PNG, WebP) with precise size control. Fully client-side and privacy-friendly.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-intro">
+    <h1>BulkCrop Image Processor</h1>
+    <p>Optimize multiple images simultaneously with precise size control! Crop, compress, and convert images while maintaining quality. Perfect for web content creators and photographers.</p>
+    
+    <section>
+      <p>
+        Optimize multiple images simultaneously with precise size control. You can crop, compress, and convert images while maintaining quality—perfect for web content creators and photographers.
+      </p>
+      <p>
+        This is an open-source tool that does not use any server or storage to store your personal files. All processing is done between you and your browser, allowing you to load the page and turn off your internet connection freely.
+      </p>
+      <p>
+        Please note that, because it is browser-based, it uses processing directly in your browser. This may result in lag during processing, so we suggest using a high-end PC for bulk processing. Mobile devices may also experience lag; if this happens, please wait for the page to finish processing.
+      </p>
+    </section>
+  </div>
+
+  <div class="controls">
+    <input type="file" id="imageInput" accept="image/*" multiple>
+    <div>
+      <label>Min Size (KB)</label>
+      <input type="number" id="minSize" min="10" value="100">
+    </div>
+    <div>
+      <label>Max Size (KB)</label>
+      <input type="number" id="maxSize" min="10" value="200">
+    </div>
+    <div>
+      <label>Format</label>
+      <select id="outputFormat">
+        <option value="image/jpeg">JPEG</option>
+        <option value="image/png">PNG</option>
+        <option value="image/webp">WebP</option>
+      </select>
+    </div>
+    <div>
+      <label>Aspect Ratio</label>
+      <select id="aspectRatio">
+        <option value="free">Free</option>
+        <option value="1">1:1</option>
+        <option value="1.333">4:3</option>
+        <option value="1.777">16:9</option>
+      </select>
+    </div>
+    <button id="startProcessing">Process All Images</button>
+  </div>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <div id="imagesArea"></div>
+
+  <footer>
+    <p>
+      We are continuously working to improve this web app. Please give a star to our GitHub repository at
+      <a href="https://github.com/developeranaz/bulk-photo-crop-compressor/" target="_blank" rel="noopener">
+        https://github.com/developeranaz/bulk-photo-crop-compressor/
+      </a>.
+    </p>
+    <p>
+      Additionally, we are adding ads to help maintain our website domain costs, so we kindly ask for your cooperation by turning off your ad blockers.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
